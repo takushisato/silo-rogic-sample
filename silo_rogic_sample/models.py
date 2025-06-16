@@ -55,7 +55,7 @@ class SiloCompare(models.Model):
     """
     source_silo = models.ForeignKey(SiloMaster, verbose_name="比較元サイロ", on_delete=models.CASCADE, related_name="comparisons_as_source")
     target_silo = models.ForeignKey(SiloMaster, verbose_name="比較先サイロ", on_delete=models.CASCADE, related_name="comparisons_as_target")
-
+    formula = models.TextField("比較する計算式の内容", blank=True, null=True)
 
     def __str__(self):
         return f"Compare {self.silo.silo_name} with {self.compare_with_silo.silo_name}"
