@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class SiloMaster(models.Model):
     """
     should_calculate: 計算対象になるかを判定するフラグ
@@ -27,7 +28,7 @@ class SiloMaster(models.Model):
 
 class SiloFormula(models.Model):
     """
-    SiloMasterに対応した計算式の情報（should_calculate=Trueのときのみ存在）
+    SiloMasterに対応した計算式の情報（should_calculate=Trueの場合のみ存在）
     """
     silo = models.OneToOneField(SiloMaster, on_delete=models.CASCADE, related_name="formula")
     formula_text = models.TextField("計算式の内容", blank=True, null=True)
