@@ -28,7 +28,6 @@ class SiloMaster(models.Model):
             raise ValidationError("should_compare_with_others=True の場合、SiloCompare を作成してください。")
 
 
-
 class SiloFormula(models.Model):
     """
     SiloMasterに対応した計算式の情報（should_calculate=Trueの場合のみ存在）
